@@ -29,7 +29,7 @@ export default function FileDropBox({length}: props) {
     const formData = new FormData();
     formData.append("file", selectedFile);
     try {
-      const res = await fetch(`http://127.0.0.1:8000/run?length=${length}`, {
+      const res = await fetch(`https://legalapi-1.onrender.com/run?length=${length}`, {
         method: "POST",
         body: formData,
       });
