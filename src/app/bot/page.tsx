@@ -1,13 +1,13 @@
 "use client";
-import { Button } from "@/components/ui/button"; // Assuming this is a shadcn/ui Button or similar
-import FileDropBox from "@/components/ui/dropbox"; // Assuming this is your custom FileDropBox component
+
+import { Button } from "@/components/ui/button";
+import FileDropBox from "@/components/ui/dropbox";
 import { useState } from "react";
-import { motion } from "framer-motion"; // Import motion for animations
+import { motion, easeOut } from "framer-motion";
 
 export default function Bot() {
   const [length, setLength] = useState<number>(400);
 
-  // Animation variants for sections
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -17,7 +17,7 @@ export default function Bot() {
         when: "beforeChildren",
         staggerChildren: 0.2,
         duration: 0.8,
-        ease: "easeOut",
+        ease: easeOut, 
       },
     },
   };
@@ -53,21 +53,14 @@ export default function Bot() {
           <p className="text-xl sm:text-2xl text-gray-300 font-semibold">
             Choose the desired report length:
           </p>
+
           <div className="flex flex-wrap justify-center gap-6">
-            {/* Length Buttons */}
             {[400, 600, 1000].map((len) => (
-              <motion.div
-                key={len}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <motion.div key={len} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   className={`
-                    px-8 py-4 rounded-xm text-lg font-bold shadow-lg transition-all duration-300
-                    ${length === len
-                      ? "border border-white bg-black text-white"
-                      : "bg-white text-black"
-                    }
+                    px-8 py-4 rounded-md text-lg font-bold shadow-lg transition-all duration-300
+                    ${length === len ? "border border-white bg-black text-white" : "bg-white text-black"}
                   `}
                   onClick={() => setLength(len)}
                 >
@@ -77,11 +70,7 @@ export default function Bot() {
             ))}
           </div>
 
-          {/* File Drop Box */}
-          <motion.div
-            className="w-full max-w-2xl mt-12"
-            variants={itemVariants}
-          >
+          <motion.div className="w-full max-w-2xl mt-12" variants={itemVariants}>
             <FileDropBox length={length} />
           </motion.div>
         </motion.div>
