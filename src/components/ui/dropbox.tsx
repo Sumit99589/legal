@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 type props = {
-  length: Number;
+  length: number;
 }
 
 export default function FileDropBox({length}: props) {

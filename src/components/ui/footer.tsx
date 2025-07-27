@@ -10,7 +10,7 @@ export default function Footer(){
         <footer className="flex flex-col space-y-20">
             <div className="flex flex-col items-center bg-[#232326] min-w-5xl mx-auto space-y-6 pt-22 pb-22 mt-25 rounded-3xl">
                 <h1 className="text-7xl font-sans">Try out LegalDoc today.</h1>
-                <p className="text-gray-400 text-xl">"Draft, analyze, and summarize legal documents — all in one place."</p>
+                <p className="text-gray-400 text-xl">&quot;Draft, analyze, and summarize legal documents — all in one place.&quot;</p>
                 <Button variant={"outline"} className="text-black p-5 mt-6 cursor-pointer" onClick={()=>router.push("/bot")}>Try out LegalDoc for free <ArrowRight/> </Button>
             </div>
             <div className="flex flex-row justify-between min-w-5xl mx-auto items-center border border-black border-b-gray-700 pb-11">

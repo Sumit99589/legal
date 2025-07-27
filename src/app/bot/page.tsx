@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion"; // Import motion for animations
 
 export default function Bot() {
-  const [length, setLength] = useState<Number>(400);
+  const [length, setLength] = useState<number>(400);
 
   // Animation variants for sections
   const containerVariants = {
